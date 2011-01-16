@@ -1,13 +1,15 @@
 body { 
 	font-family: Helvetica;
 }
+
 h1 {
 	letter-spacing:-2px;
 	font-family: Helvetica;
 	padding: 0px;
 	margin: 10px 5px 0px;
 }
-#subtitle{
+
+h2 {
 	padding: 0px;
 	margin: 0px 5px 10px;
 	color: #696969;
@@ -21,4 +23,35 @@ h1 {
 	padding: 0px;
 	border: 1px solid black;
 	
+}
+
+#navigation {
+	padding:0px;
+	margin: 0px;
+}
+
+li {
+	float: left;
+}
+
+ul{
+	list-style-type:none;
+	margin: 0px 25px;
+	padding: 0;
+	
+}
+
+a:link,a:visited{
+	background-color: black;
+	display:block;
+	width: 120px;
+	text-align:center;
+	color:white;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+a:hover,a:active{
+	background-color: white;
+	color:black;
 }
