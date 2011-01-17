@@ -8,16 +8,21 @@
 #titleblock {
 	margin: 0px;
 	background-color:#D3D3D3;
-	padding: 5px 10px;
-	
-	
+	padding: 5px 10px;	
 }
 
 #navigation {
 	padding: 10px;
 	margin: 0px;
 	background-color: black;
-	
+}
+
+#content{
+	margin-bottom: 20px;
+}
+
+#feelingsbox{
+	margin-bottom: 20px;
 }
 
 h1 {
@@ -53,4 +58,15 @@ a:link,a:visited{
 a:hover,a:active{
 	background-color: white;
 	color:black;
+}
+
+label {
+	width: 200px;
+	display: block;
+	float: left;
+}
+
+button {
+	margin-left: 200px;
+	margin-bottom: 20px;
 }

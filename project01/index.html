@@ -20,17 +20,26 @@
 			<a href="#Fun">Fun</a>
 			<a href="#Evil">Evil</a>
 		</div>
-		<div id="content">
+		<div id="middlewrapper">		
 			<h3> Lorem Ipsum Dolor Sit Amet. </h3>
-			<label for="feelings"> How do you feel today? </label>
-			<input type="text"> 
-			<select multiple="multiple">
-				<option value="numb">Comfortably numb</option>	
-				<option value="jerk">Grumpy as poop, you jerk</option>
-				<option value="happy">Happy like I'm on controlled substances</option>
-				<option value="normal">Normal. Absolutely normal.</option> 		
-			</select>
-		<div>
+			<form>		
+				<div id="content">
+			
+					<label for="feelings"> How do you feel today? </label>
+					<input type="text"> 
+				</div>
+				<div id="feelingsbox">
+					<label for="box"> How would you like to feel? (choose all that apply)</label>
+					<select multiple="multiple">
+						<option value="numb">Comfortably numb</option>	
+						<option value="jerk">Grumpy as poop, you jerk</option>
+						<option value="happy">Happy like I'm on controlled substances</option>
+						<option value="normal">Normal. Absolutely normal.</option> 
+					</select>	
+				</div>
+					<button type="feelme">Feel me!</button>
+			</form>
+		</div>
 	</div>
 	
 </body>
