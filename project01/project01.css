@@ -34,6 +34,11 @@
 	padding: 10px;
 }
 
+#sidebar{
+	float: right;
+	background-color: #EAEAEA;
+	width: 350px;
+}
 h1 {
 	letter-spacing:-1px;
 	padding: 0px;
@@ -51,6 +56,21 @@ h2 {
 h3{
 	font-size:25px;
 	margin:0px 0px 20px 0px;
+}
+
+h4{
+	font-size: 22px;
+    margin: 0;
+    padding-bottom: 15px;
+    padding-left: 3px
+}
+
+h5{
+	font-size: 17px;
+    font-weight: normal;
+    margin: 0;
+    padding-bottom: 15px;
+    padding-left: 3px;
 }
 body { 
 	font-family: Helvetica;
