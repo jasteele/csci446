@@ -12,13 +12,13 @@
 			<h2>Figuring out your life for you, so you don't have to...</h2>
 		</div>	
 		<div id="navigation">
-			<a href="#Home">Home</a>
-			<a href="#Interests">Interests</a>
-			<a href="#Health">Health</a>
-			<a href="#Academic">Academic</a>
-			<a href="#Professional">Professional</a>
-			<a href="#Fun">Fun</a>
-			<a href="#Evil">Evil</a>
+			<a href="#Home" title="Home">Home</a>
+			<a href="#Interests" title="Interests">Interests</a>
+			<a href="#Health" title="Health">Health</a>
+			<a href="#Academic" title="Academic">Academic</a>
+			<a href="#Professional" title="Professional">Professional</a>
+			<a href="#Fun" title="Fun">Fun</a>
+			<a href="#Evil" title="More Fun">Evil</a>
 		</div>
 		<div id="middlewrapper">		
 			<div id="sidebar"> 
@@ -31,7 +31,7 @@
 				<div id="content">
 			
 					<label for="feelings"> How do you feel today? </label>
-					<input type="text"> 
+					<input id="textinput" type="text"> 
 				</div>
 				<div id="feelingsbox">
 					<label for="box"> How would you like to feel? (choose all that apply)</label>
@@ -42,7 +42,7 @@
 						<option value="normal">Normal. Absolutely normal.</option> 
 					</select>	
 				</div>
-					<button type="feelme">Feel me!</button>
+					<button type="feelme" onclick="show_alert()">Feel me!</button>
 			</form>
 			
 		</div>
@@ -50,6 +50,14 @@
 			<p>&copy; 2011 Borg-Like Monstosity of Mind Control, Inc. All rights reserved. </p>
 		</div>
 	</div>
-	
+	<script type="text/javascript">
+	function show_alert()
+	{
+	var text = document.getElementById('textinput');
+	if(text.value=="")
+		alert("Surely you feel something!");
+	return false;
+	}
+	</script>
 </body>
 </html>
