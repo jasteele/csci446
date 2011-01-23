@@ -1,0 +1,614 @@
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20110123192021)
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110123192021')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("products")[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-23 12:25:20) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 33ms (View: 20, DB: 1) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2011-01-23 12:26:42) [GET]
+Rendering template within layouts/products
+Rendering products/new
+Completed in 5603ms (View: 5588, DB: 0) | 200 OK [http://localhost/products/new]
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2011-01-23 12:29:12) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"QLQa1B/9JUEeXL/B3o7+75D1mH8SaNOQfpoWbyBbZPE=", "product"=>{"image_url"=>"/images/svn.jpg", "title"=>"Pragmatic Version Control", "description"=>"<p> This book is a recipe based approach to using Subversion that will get up and running quickly--- and correctly. All projects need version control: it's a foundational piece of any project."}}
+  [4;35;1mProduct Create (3.0ms)[0m   [0mINSERT INTO "products" ("created_at", "title", "image_url", "updated_at", "description") VALUES('2011-01-23 19:29:12', 'Pragmatic Version Control', '/images/svn.jpg', '2011-01-23 19:29:12', '<p> This book is a recipe based approach to using Subversion that will get up and running quickly--- and correctly. All projects need version control: it''s a foundational piece of any project.')[0m
+Redirected to http://localhost:3000/products/1
+Completed in 25ms (DB: 3) | 302 Found [http://localhost/products]
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2011-01-23 12:29:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 25ms (View: 11, DB: 1) | 200 OK [http://localhost/products/1]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-23 12:29:29) [GET]
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 22ms (View: 9, DB: 0) | 200 OK [http://localhost/products]
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20110123192021)
+Migrating to AddPriceToProduct (20110123193551)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mALTER TABLE "products" ADD "price" decimal(8,2) DEFAULT 0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110123193551')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("products")[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-23 12:59:03) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 79ms (View: 27, DB: 1) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-23 13:32:39) [GET]
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 20ms (View: 9, DB: 0) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2011-01-23 13:32:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 31ms (View: 19, DB: 0) | 200 OK [http://localhost/products/1/edit]
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2011-01-23 13:32:47) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"QLQa1B/9JUEeXL/B3o7+75D1mH8SaNOQfpoWbyBbZPE=", "id"=>"1", "product"=>{"price"=>"0", "image_url"=>"", "title"=>"Pragmatic Version Control", "description"=>"<p> This book is a recipe based approach to using Subversion that will get up and running quickly--- and correctly. All projects need version control: it's a foundational piece of any project."}}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 33ms (View: 17, DB: 0) | 200 OK [http://localhost/products/1]
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2011-01-23 13:33:20) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"QLQa1B/9JUEeXL/B3o7+75D1mH8SaNOQfpoWbyBbZPE=", "id"=>"1", "product"=>{"price"=>"0", "image_url"=>"/image/svn.jpg", "title"=>"Pragmatic Version Control", "description"=>"<p> This book is a recipe based approach to using Subversion that will get up and running quickly--- and correctly. All projects need version control: it's a foundational piece of any project. </p>"}}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 29ms (View: 13, DB: 0) | 200 OK [http://localhost/products/1]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-23 13:33:25) [GET]
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 21ms (View: 9, DB: 1) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-23 13:34:32) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 21ms (View: 9, DB: 1) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2011-01-23 13:34:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 26ms (View: 14, DB: 0) | 200 OK [http://localhost/products/1/edit]
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2011-01-23 13:34:34) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"QLQa1B/9JUEeXL/B3o7+75D1mH8SaNOQfpoWbyBbZPE=", "id"=>"1", "product"=>{"price"=>"0", "image_url"=>"/images/svn.jpg", "title"=>"Pragmatic Version Control", "description"=>"<p> This book is a recipe based approach to using Subversion that will get up and running quickly--- and correctly. All projects need version control: it's a foundational piece of any project."}}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 29ms (View: 13, DB: 0) | 200 OK [http://localhost/products/1]
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2011-01-23 13:34:42) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"QLQa1B/9JUEeXL/B3o7+75D1mH8SaNOQfpoWbyBbZPE=", "id"=>"1", "product"=>{"price"=>"4.99", "image_url"=>"/images/svn.jpg", "title"=>"Pragmatic Version Control", "description"=>"<p> This book is a recipe based approach to using Subversion that will get up and running quickly--- and correctly. All projects need version control: it's a foundational piece of any project."}}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 29ms (View: 14, DB: 0) | 200 OK [http://localhost/products/1]
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2011-01-23 13:34:49) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"QLQa1B/9JUEeXL/B3o7+75D1mH8SaNOQfpoWbyBbZPE=", "id"=>"1", "product"=>{"price"=>"4.99", "image_url"=>"/images/svn.jpg", "title"=>"Pragmatic Version Control", "description"=>"This book is a recipe based approach to using Subversion that will get up and running quickly--- and correctly. All projects need version control: it's a foundational piece of any project."}}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 29ms (View: 14, DB: 0) | 200 OK [http://localhost/products/1]
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2011-01-23 13:36:48) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"QLQa1B/9JUEeXL/B3o7+75D1mH8SaNOQfpoWbyBbZPE=", "id"=>"1", "product"=>{"price"=>"4.99", "image_url"=>"/images/svn.jpg", "title"=>"Pragmatic Version Control", "description"=>"<p>This book is a recipe based approach to using Subversion that will get up and running quickly--- and correctly. All projects need version control: it's a foundational piece of any project."}}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 30ms (View: 15, DB: 0) | 200 OK [http://localhost/products/1]
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2011-01-23 13:36:55) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"QLQa1B/9JUEeXL/B3o7+75D1mH8SaNOQfpoWbyBbZPE=", "id"=>"1", "product"=>{"price"=>"4.99", "image_url"=>"/images/svn.jpg", "title"=>"Pragmatic Version Control", "description"=>"<p>This book is a recipe based approach to using Subversion that will get up and running quickly--- and correctly. All projects need version control: it's a foundational piece of any project.</p>"}}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 29ms (View: 14, DB: 0) | 200 OK [http://localhost/products/1]
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2011-01-23 13:37:08) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"QLQa1B/9JUEeXL/B3o7+75D1mH8SaNOQfpoWbyBbZPE=", "id"=>"1", "product"=>{"price"=>"4.99", "image_url"=>"/images/svn.jpg", "title"=>"Pragmatic Version Control", "description"=>"This book is a recipe based approach to using Subversion that will get up and running quickly--- and correctly. All projects need version control: it's a foundational piece of any project."}}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 30ms (View: 14, DB: 1) | 200 OK [http://localhost/products/1]
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2011-01-23 13:37:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 23ms (View: 10, DB: 1) | 200 OK [http://localhost/products/1]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-23 13:37:12) [GET]
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 21ms (View: 8, DB: 1) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2011-01-23 13:37:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 25ms (View: 13, DB: 0) | 200 OK [http://localhost/products/1/edit]
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2011-01-23 13:37:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 26ms (View: 13, DB: 0) | 200 OK [http://localhost/products/1/edit]
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2011-01-23 13:37:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 26ms (View: 13, DB: 0) | 200 OK [http://localhost/products/1/edit]
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2011-01-23 13:37:25) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"QLQa1B/9JUEeXL/B3o7+75D1mH8SaNOQfpoWbyBbZPE=", "id"=>"1", "product"=>{"price"=>"0", "image_url"=>"/images/svn.jpg", "title"=>"Pragmatic Version Control", "description"=>"This book is a recipe based approach to using Subversion that will get up and running quickly--- and correctly. All projects need version control: it's a foundational piece of any project."}}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 29ms (View: 14, DB: 0) | 200 OK [http://localhost/products/1]
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2011-01-23 13:38:40) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"QLQa1B/9JUEeXL/B3o7+75D1mH8SaNOQfpoWbyBbZPE=", "id"=>"1", "product"=>{"price"=>"0", "image_url"=>"/images/svn.jpg", "title"=>"Pragmatic Version Control", "description"=>"This book is a recipe based approach to using Subversion that will get up and running quickly--- and correctly. All projects need version control: it's a foundational piece of any project."}}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+  [4;35;1mProduct Update (1.0ms)[0m   [0mUPDATE "products" SET "updated_at" = '2011-01-23 20:38:40', "description" = 'This book is a recipe based approach to using Subversion that will get up and running quickly--- and correctly. All projects need version control: it''s a foundational piece of any project.' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/products/1
+Completed in 23ms (DB: 1) | 302 Found [http://localhost/products/1]
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2011-01-23 13:38:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 18ms (View: 5, DB: 1) | 200 OK [http://localhost/products/1]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-23 13:38:43) [GET]
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 21ms (View: 10, DB: 1) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2011-01-23 13:38:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 26ms (View: 13, DB: 0) | 200 OK [http://localhost/products/1/edit]
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2011-01-23 13:40:48) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"QLQa1B/9JUEeXL/B3o7+75D1mH8SaNOQfpoWbyBbZPE=", "id"=>"1", "product"=>{"price"=>"wibl", "image_url"=>"/images/svn.jpg", "title"=>"Pragmatic Version Control", "description"=>"This book is a recipe based approach to using Subversion that will get up and running quickly--- and correctly. All projects need version control: it's a foundational piece of any project."}}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 32ms (View: 16, DB: 0) | 200 OK [http://localhost/products/1]
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2011-01-23 13:40:53) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"QLQa1B/9JUEeXL/B3o7+75D1mH8SaNOQfpoWbyBbZPE=", "id"=>"1", "product"=>{"price"=>"-1.00", "image_url"=>"/images/svn.jpg", "title"=>"Pragmatic Version Control", "description"=>"This book is a recipe based approach to using Subversion that will get up and running quickly--- and correctly. All projects need version control: it's a foundational piece of any project."}}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+  [4;35;1mProduct Update (1.0ms)[0m   [0mUPDATE "products" SET "updated_at" = '2011-01-23 20:40:53', "price" = -1.0 WHERE "id" = 1[0m
+Redirected to http://localhost:3000/products/1
+Completed in 60ms (DB: 1) | 302 Found [http://localhost/products/1]
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2011-01-23 13:40:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 19ms (View: 6, DB: 1) | 200 OK [http://localhost/products/1]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-23 13:40:56) [GET]
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 21ms (View: 9, DB: 1) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-23 13:55:28) [GET]
+
+SyntaxError (C:/Users/Jared/Desktop/cs446/src/project02/app/models/product.rb:11: syntax error, unexpected $end, expecting kEND):
+  app/controllers/products_controller.rb:5:in `index'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (45.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2011-01-23 13:55:50) [GET]
+  Parameters: {"id"=>"1"}
+
+SyntaxError (C:/Users/Jared/Desktop/cs446/src/project02/app/models/product.rb:11: syntax error, unexpected $end, expecting kEND):
+  app/controllers/products_controller.rb:37:in `edit'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (44.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2011-01-23 13:56:25) [GET]
+  Parameters: {"id"=>"1"}
+
+SyntaxError (C:/Users/Jared/Desktop/cs446/src/project02/app/models/product.rb:11: syntax error, unexpected $end, expecting kEND):
+  app/controllers/products_controller.rb:37:in `edit'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (100.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2011-01-23 13:56:27) [GET]
+  Parameters: {"id"=>"1"}
+
+SyntaxError (C:/Users/Jared/Desktop/cs446/src/project02/app/models/product.rb:11: syntax error, unexpected $end, expecting kEND):
+  app/controllers/products_controller.rb:37:in `edit'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2011-01-23 13:57:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `validates' for #<Class:0x92b4370>):
+  app/models/product.rb:4
+  app/controllers/products_controller.rb:37:in `edit'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (44.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2011-01-23 13:57:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `validates' for #<Class:0x91aa0f0>):
+  app/models/product.rb:4
+  app/controllers/products_controller.rb:37:in `edit'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (100.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2011-01-23 13:57:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `validates' for #<Class:0x937d718>):
+  app/models/product.rb:4
+  app/controllers/products_controller.rb:37:in `edit'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (44.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2011-01-23 13:57:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `validates' for #<Class:0x9270a68>):
+  app/models/product.rb:4
+  app/controllers/products_controller.rb:37:in `edit'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (45.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2011-01-23 13:57:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 27ms (View: 14, DB: 1) | 200 OK [http://localhost/products/1/edit]
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2011-01-23 13:58:29) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"QLQa1B/9JUEeXL/B3o7+75D1mH8SaNOQfpoWbyBbZPE=", "id"=>"1", "product"=>{"price"=>"1.0", "image_url"=>"/images/svn.jpg", "title"=>"Pragmatic Version Control", "description"=>"This book is a recipe based approach to using Subversion that will get up and running quickly--- and correctly. All projects need version control: it's a foundational piece of any project."}}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+  [4;36;1mProduct Update (2.0ms)[0m   [0;1mUPDATE "products" SET "updated_at" = '2011-01-23 20:58:29', "price" = 1.0 WHERE "id" = 1[0m
+Redirected to http://localhost:3000/products/1
+Completed in 64ms (DB: 2) | 302 Found [http://localhost/products/1]
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2011-01-23 13:58:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 18ms (View: 6, DB: 1) | 200 OK [http://localhost/products/1]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-23 13:58:31) [GET]
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 21ms (View: 9, DB: 0) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-23 13:58:55) [GET]
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `validates' for #<Class:0x931c1e8>):
+  app/models/product.rb:4
+  app/controllers/products_controller.rb:5:in `index'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (44.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-23 14:05:09) [GET]
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 21ms (View: 9, DB: 1) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2011-01-23 14:05:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 26ms (View: 14, DB: 0) | 200 OK [http://localhost/products/1/edit]
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2011-01-23 14:05:16) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"QLQa1B/9JUEeXL/B3o7+75D1mH8SaNOQfpoWbyBbZPE=", "id"=>"1", "product"=>{"price"=>"-1", "image_url"=>"/images/svn.jpg", "title"=>"Pragmatic Version Control", "description"=>"This book is a recipe based approach to using Subversion that will get up and running quickly--- and correctly. All projects need version control: it's a foundational piece of any project."}}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 47ms (View: 13, DB: 0) | 200 OK [http://localhost/products/1]
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2011-01-23 14:05:24) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"QLQa1B/9JUEeXL/B3o7+75D1mH8SaNOQfpoWbyBbZPE=", "id"=>"1", "product"=>{"price"=>"9.99", "image_url"=>"/images/svn.jpg", "title"=>"Pragmatic Version Control", "description"=>"This book is a recipe based approach to using Subversion that will get up and running quickly--- and correctly. All projects need version control: it's a foundational piece of any project."}}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+  [4;35;1mProduct Update (1.0ms)[0m   [0mUPDATE "products" SET "updated_at" = '2011-01-23 21:05:24', "price" = 9.99 WHERE "id" = 1[0m
+Redirected to http://localhost:3000/products/1
+Completed in 58ms (DB: 1) | 302 Found [http://localhost/products/1]
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2011-01-23 14:05:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 78ms (View: 7, DB: 0) | 200 OK [http://localhost/products/1]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-23 14:05:26) [GET]
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 21ms (View: 9, DB: 0) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-23 14:20:28) [GET]
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 22ms (View: 10, DB: 0) | 200 OK [http://localhost/products]
