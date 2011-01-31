@@ -1820,3 +1820,394 @@ Processing StoreController#index (for 127.0.0.1 at 2011-01-30 22:31:00) [GET]
 Rendering template within layouts/store
 Rendering store/index
 Completed in 29ms (View: 14, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-01-30 22:53:27) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+
+ActionView::TemplateError (undefined method `items' for nil:NilClass) on line #3 of app/views/store/_cart.html.erb:
+1: <div class="cart-title">Your Cart</div>
+2: <table>
+3:   <%= render(:partial => "cart_item", :collection => cart.items) %>
+4:  
+5:  <tr class="total-line">
+6:     <td colspan="2">Total</td>
+
+    app/views/store/_cart.html.erb:3
+    app/views/layouts/store.html.erb:16
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (57.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-01-30 22:55:29) [GET]
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+
+ActionView::TemplateError (undefined method `items' for nil:NilClass) on line #3 of app/views/store/_cart.html.erb:
+1: <div class="cart-title">Your Cart</div>
+2: <table>
+3:   <%= render(:partial => "cart_item", :collection => cart.items) %>
+4:  
+5:  <tr class="total-line">
+6:     <td colspan="2">Total</td>
+
+    app/views/store/_cart.html.erb:3
+    app/views/layouts/store.html.erb:16
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (58.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-01-30 22:56:36) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+
+ActionView::TemplateError (undefined method `items' for nil:NilClass) on line #3 of app/views/store/_cart.html.erb:
+1: <div class="cart-title">Your Cart</div>
+2: <table>
+3:   <%= render(:partial => "cart_item", :collection => cart.items) %>
+4:  
+5:  <tr class="total-line">
+6:     <td colspan="2">Total</td>
+
+    app/views/store/_cart.html.erb:3
+    app/views/layouts/store.html.erb:16
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (60.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (8.0ms)[0m   [0;1mDELETE FROM sessions[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-01-30 23:01:40) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (2.0ms)
+Completed in 5879ms (View: 5780, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2011-01-30 23:01:50) [POST]
+  Parameters: {"authenticity_token"=>"fhR7GK5UlAH9cjwX+8lwajRUfOZufCsFbhC7ngDpL3g=", "id"=>"2"}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 2) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+Rendered store/_cart_item (7.0ms)
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart (4.0ms)
+Completed in 69ms (View: 34, DB: 1) | 200 OK [http://localhost/store/add_to_cart/2]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2011-01-30 23:02:42) [POST]
+  Parameters: {"authenticity_token"=>"fhR7GK5UlAH9cjwX+8lwajRUfOZufCsFbhC7ngDpL3g=", "id"=>"2"}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 2) [0m
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/controllers/store_controller.rb:11:in `redirect_to_index'
+  app/controllers/store_controller.rb:11:in `add_to_cart'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (42.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2011-01-30 23:02:51) [POST]
+  Parameters: {"authenticity_token"=>"fhR7GK5UlAH9cjwX+8lwajRUfOZufCsFbhC7ngDpL3g=", "id"=>"2"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 2) [0m
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/controllers/store_controller.rb:11:in `redirect_to_index'
+  app/controllers/store_controller.rb:11:in `add_to_cart'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (90.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-01-30 23:03:01) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart (2.0ms)
+Completed in 44ms (View: 18, DB: 2) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2011-01-30 23:03:04) [POST]
+  Parameters: {"authenticity_token"=>"fhR7GK5UlAH9cjwX+8lwajRUfOZufCsFbhC7ngDpL3g=", "id"=>"2"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 2) [0m
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/controllers/store_controller.rb:11:in `redirect_to_index'
+  app/controllers/store_controller.rb:11:in `add_to_cart'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (40.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StoreController#empty_cart (for 127.0.0.1 at 2011-01-30 23:03:12) [POST]
+  Parameters: {"authenticity_token"=>"fhR7GK5UlAH9cjwX+8lwajRUfOZufCsFbhC7ngDpL3g="}
+Redirected to http://localhost:3000/store
+Completed in 26ms (DB: 1) | 302 Found [http://localhost/store/empty_cart]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-01-30 23:03:12) [GET]
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (2.0ms)
+Completed in 38ms (View: 16, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-01-30 23:04:23) [GET]
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (1.0ms)
+Completed in 96ms (View: 18, DB: 2) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2011-01-30 23:04:25) [POST]
+  Parameters: {"authenticity_token"=>"fhR7GK5UlAH9cjwX+8lwajRUfOZufCsFbhC7ngDpL3g=", "id"=>"2"}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 2) [0m
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/controllers/store_controller.rb:11:in `redirect_to_index'
+  app/controllers/store_controller.rb:11:in `add_to_cart'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (54.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (44.0ms)[0m   [0;1mDELETE FROM sessions[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-01-30 23:05:56) [GET]
+  [4;36;1mProduct Load (2.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (2.0ms)
+Completed in 5768ms (View: 5668, DB: 2) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2011-01-30 23:06:04) [POST]
+  Parameters: {"authenticity_token"=>"mAPGv9CGLOf4uZlTj9kKnW9TgigINJeynA3koYo3ObA=", "id"=>"2"}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 2) [0m
+Redirected to http://localhost:3000/store
+Completed in 29ms (DB: 1) | 302 Found [http://localhost/store/add_to_cart/2]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-01-30 23:06:04) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart (8.0ms)
+Completed in 51ms (View: 23, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2011-01-30 23:06:05) [POST]
+  Parameters: {"authenticity_token"=>"mAPGv9CGLOf4uZlTj9kKnW9TgigINJeynA3koYo3ObA=", "id"=>"2"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 2) [0m
+Redirected to http://localhost:3000/store
+Completed in 28ms (DB: 2) | 302 Found [http://localhost/store/add_to_cart/2]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-01-30 23:06:06) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart (2.0ms)
+Completed in 43ms (View: 17, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2011-01-30 23:06:06) [POST]
+  Parameters: {"authenticity_token"=>"mAPGv9CGLOf4uZlTj9kKnW9TgigINJeynA3koYo3ObA=", "id"=>"2"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 2) [0m
+Redirected to http://localhost:3000/store
+Completed in 28ms (DB: 2) | 302 Found [http://localhost/store/add_to_cart/2]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-01-30 23:06:06) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart (2.0ms)
+Completed in 46ms (View: 17, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2011-01-30 23:06:07) [POST]
+  Parameters: {"authenticity_token"=>"mAPGv9CGLOf4uZlTj9kKnW9TgigINJeynA3koYo3ObA=", "id"=>"2"}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 2) [0m
+Redirected to http://localhost:3000/store
+Completed in 27ms (DB: 0) | 302 Found [http://localhost/store/add_to_cart/2]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-01-30 23:06:07) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart_item (0.0ms)
+Rendered store/_cart (2.0ms)
+Completed in 46ms (View: 18, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2011-01-30 23:06:08) [POST]
+  Parameters: {"authenticity_token"=>"mAPGv9CGLOf4uZlTj9kKnW9TgigINJeynA3koYo3ObA=", "id"=>"4"}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 4) [0m
+Redirected to http://localhost:3000/store
+Completed in 28ms (DB: 1) | 302 Found [http://localhost/store/add_to_cart/4]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-01-30 23:06:09) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart (4.0ms)
+Completed in 56ms (View: 29, DB: 2) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2011-01-30 23:06:10) [POST]
+  Parameters: {"authenticity_token"=>"mAPGv9CGLOf4uZlTj9kKnW9TgigINJeynA3koYo3ObA=", "id"=>"4"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 4) [0m
+Redirected to http://localhost:3000/store
+Completed in 27ms (DB: 1) | 302 Found [http://localhost/store/add_to_cart/4]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-01-30 23:06:10) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart_item (0.0ms)
+Rendered store/_cart_item (0.0ms)
+Rendered store/_cart (3.0ms)
+Completed in 45ms (View: 18, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2011-01-30 23:06:12) [POST]
+  Parameters: {"authenticity_token"=>"mAPGv9CGLOf4uZlTj9kKnW9TgigINJeynA3koYo3ObA=", "id"=>"3"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 3) [0m
+Redirected to http://localhost:3000/store
+Completed in 28ms (DB: 2) | 302 Found [http://localhost/store/add_to_cart/3]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-01-30 23:06:12) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart_item (0.0ms)
+Rendered store/_cart_item (0.0ms)
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart (4.0ms)
+Completed in 48ms (View: 19, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#empty_cart (for 127.0.0.1 at 2011-01-30 23:06:15) [POST]
+  Parameters: {"authenticity_token"=>"mAPGv9CGLOf4uZlTj9kKnW9TgigINJeynA3koYo3ObA="}
+Redirected to http://localhost:3000/store
+Completed in 25ms (DB: 1) | 302 Found [http://localhost/store/empty_cart]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-01-30 23:06:15) [GET]
+  [4;35;1mProduct Load (4.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (1.0ms)
+Completed in 41ms (View: 17, DB: 4) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2011-01-30 23:14:41) [POST]
+  Parameters: {"authenticity_token"=>"mAPGv9CGLOf4uZlTj9kKnW9TgigINJeynA3koYo3ObA=", "id"=>"2"}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 2) [0m
+Redirected to http://localhost:3000/store
+Completed in 30ms (DB: 1) | 302 Found [http://localhost/store/add_to_cart/2]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-01-30 23:14:41) [GET]
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart_item (0.0ms)
+Rendered store/_cart (2.0ms)
+Completed in 45ms (View: 18, DB: 1) | 200 OK [http://localhost/store]
