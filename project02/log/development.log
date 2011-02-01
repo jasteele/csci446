@@ -3926,3 +3926,648 @@ Rendering store/add_to_cart
 Rendered store/_cart_item (13.0ms)
 Rendered store/_cart (19.0ms)
 Completed in 73ms (View: 29, DB: 2) | 200 OK [http://localhost/store/add_to_cart/2]
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddTestData (20080601000003)
+Migrating to CreateProducts (20110123192021)
+Migrating to AddPriceToProduct (20110123193551)
+Migrating to CreateSessions (20110131031648)
+Migrating to CreateOrders (20110201000654)
+Migrating to CreateLineItems (20110201000810)
+Migrating to CreateUsers (20110201034253)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (14.0ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "hashed_password" varchar(255), "salt" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110201034253')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("line_items")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("orders")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("products")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-01-31 21:35:51) [GET]
+Rendering template within layouts/users
+Rendering users/new
+Completed in 168ms (View: 141, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-01-31 21:36:06) [POST]
+  Parameters: {"commit"=>"Add User", "authenticity_token"=>"K2gVtBwbjdK+l8NjMC/yMarPKafuJm/P1puXH4mPWLg=", "user"=>{"name"=>"", "password_confirmation"=>"", "password"=>""}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = '') LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 80ms (View: 20, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-01-31 21:36:38) [POST]
+  Parameters: {"commit"=>"Add User", "authenticity_token"=>"K2gVtBwbjdK+l8NjMC/yMarPKafuJm/P1puXH4mPWLg=", "user"=>{"name"=>"bob", "password_confirmation"=>"laster", "password"=>"laster"}}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."name" = 'bob') LIMIT 1[0m
+  [4;36;1mUser Create (1.0ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "created_at", "updated_at", "hashed_password") VALUES('bob', '765675720.626227052783372', '2011-02-01 04:36:38', '2011-02-01 04:36:38', 'd6ba38e6e7af716ddae73529b85c2d43c3c546de')[0m
+Redirected to http://localhost:3000/users
+Completed in 66ms (DB: 2) | 302 Found [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-01-31 21:36:38) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" ORDER BY name[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 68ms (View: 39, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-01-31 21:36:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 74ms (View: 41, DB: 1) | 200 OK [http://localhost/users/1]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-01-31 21:57:43) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" ORDER BY name[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 167ms (View: 139, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-01-31 21:58:21) [GET]
+Rendering template within layouts/users
+Rendering users/new
+Completed in 73ms (View: 43, DB: 1) | 200 OK [http://localhost/users/new]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2011-01-31 21:58:31) [GET]
+
+NameError (uninitialized constant AdminController::Orders):
+  app/controllers/admin_controller.rb:18:in `index'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (54.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2011-01-31 21:59:00) [GET]
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "orders" [0m
+Rendering admin/index
+
+ActionView::TemplateError (undefined local variable or method `total_orders' for #<ActionView::Base:0x9805a28>) on line #4 of app/views/admin/index.html.erb:
+1: <h1>Welcome</h1>
+2: 
+3: It's <%= Time.now %>
+4: We have <%= pluralize(total_orders, "orders") %>
+
+    app/views/admin/index.html.erb:4
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (47.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2011-01-31 21:59:05) [GET]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "orders" [0m
+Rendering admin/index
+
+ActionView::TemplateError (undefined local variable or method `total_orders' for #<ActionView::Base:0x9644a00>) on line #4 of app/views/admin/index.html.erb:
+1: <h1>Welcome</h1>
+2: 
+3: It's <%= Time.now %>
+4: We have <%= pluralize(total_orders, "orders") %>
+
+    app/views/admin/index.html.erb:4
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (102.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2011-01-31 21:59:11) [GET]
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "orders" [0m
+Rendering admin/index
+
+ActionView::TemplateError (undefined local variable or method `total_orders' for #<ActionView::Base:0x97bdb78>) on line #4 of app/views/admin/index.html.erb:
+1: <h1>Welcome</h1>
+2: 
+3: It's <%= Time.now %>
+4: We have <%= pluralize(total_orders, "orders") %>
+
+    app/views/admin/index.html.erb:4
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (45.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2011-01-31 21:59:56) [GET]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "orders" [0m
+Rendering admin/index
+Completed in 20ms (View: 7, DB: 0) | 200 OK [http://localhost/admin]
+  [4;36;1mSQL (8.0ms)[0m   [0;1mDELETE FROM sessions[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-31 22:13:12) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 107ms (DB: 0) | 302 Found [http://localhost/products]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2011-01-31 22:13:12) [GET]
+Rendering admin/login
+Completed in 5659ms (View: 5656, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2011-01-31 22:13:25) [POST]
+  Parameters: {"name"=>"dave", "commit"=>"Login", "authenticity_token"=>"sBEILRvQFHvATi7wkUVeBPE4JDXR6aBCLphGBAbnbIc=", "password"=>"laster"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."name" = 'dave') LIMIT 1[0m
+Rendering admin/login
+Completed in 36ms (View: 4, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2011-01-31 22:13:31) [POST]
+  Parameters: {"name"=>"dave", "commit"=>"Login", "authenticity_token"=>"sBEILRvQFHvATi7wkUVeBPE4JDXR6aBCLphGBAbnbIc=", "password"=>"laster"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'dave') LIMIT 1[0m
+Rendering admin/login
+Completed in 39ms (View: 3, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2011-01-31 22:13:38) [POST]
+  Parameters: {"name"=>"dave", "commit"=>"Login", "authenticity_token"=>"sBEILRvQFHvATi7wkUVeBPE4JDXR6aBCLphGBAbnbIc=", "password"=>"lasty"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."name" = 'dave') LIMIT 1[0m
+Rendering admin/login
+Completed in 32ms (View: 3, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2011-01-31 22:13:45) [POST]
+  Parameters: {"name"=>"bob", "commit"=>"Login", "authenticity_token"=>"sBEILRvQFHvATi7wkUVeBPE4JDXR6aBCLphGBAbnbIc=", "password"=>"laster"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'bob') LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed in 30ms (DB: 1) | 302 Found [http://localhost/admin/login]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2011-01-31 22:13:45) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "orders" [0m
+Rendering admin/index
+Completed in 59ms (View: 7, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-31 22:13:52) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 70ms (View: 31, DB: 1) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-31 22:14:25) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 59ms (View: 18, DB: 2) | 200 OK [http://localhost/products]
+  [4;36;1mSQL (50.0ms)[0m   [0;1mDELETE FROM sessions[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-31 22:17:26) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 108ms (DB: 2) | 302 Found [http://localhost/products]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2011-01-31 22:17:27) [GET]
+Rendering template within layouts/store
+Rendering admin/login
+
+ActionView::TemplateError (undefined method `items' for nil:NilClass) on line #17 of app/views/layouts/store.html.erb:
+14:   <div id="columns">
+15:     <div id="side">
+16: 	  <div id="cart">
+17:       <% hidden_div_if(@cart.items.empty?, :id => "cart") do %>
+18:         <%= render(:partial => "cart", :object => @cart) %>
+19:       <% end %>
+20: 	  </div>
+
+    app/views/layouts/store.html.erb:17
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (49.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2011-01-31 22:17:56) [GET]
+Rendering template within layouts/store
+Rendering admin/login
+
+ActionView::TemplateError (undefined method `items' for nil:NilClass) on line #17 of app/views/layouts/store.html.erb:
+14:   <div id="columns">
+15:     <div id="side">
+16: 	  <div id="cart">
+17:       <% hidden_div_if(@cart.items.empty?, :id => "cart") do %>
+18:         <%= render(:partial => "cart", :object => @cart) %>
+19:       <% end %>
+20: 	  </div>
+
+    app/views/layouts/store.html.erb:17
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (104.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2011-01-31 22:18:15) [GET]
+Rendering admin/login
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2011-01-31 22:18:21) [POST]
+  Parameters: {"name"=>"bob", "commit"=>"Login", "authenticity_token"=>"980sw5LbOkXX0poQpDs6NBtfR8oFVZSb+G5ZjDibe34=", "password"=>"laster"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."name" = 'bob') LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed in 31ms (DB: 2) | 302 Found [http://localhost/admin/login]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2011-01-31 22:18:21) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "orders" [0m
+Rendering admin/index
+Completed in 59ms (View: 7, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2011-01-31 22:18:39) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "orders" [0m
+Rendering admin/index
+Completed in 43ms (View: 2, DB: 2) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2011-01-31 22:18:48) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "orders" [0m
+Rendering template within layouts/store
+Rendering admin/index
+
+ActionView::TemplateError (undefined method `items' for nil:NilClass) on line #17 of app/views/layouts/store.html.erb:
+14:   <div id="columns">
+15:     <div id="side">
+16: 	  <div id="cart">
+17:       <% hidden_div_if(@cart.items.empty?, :id => "cart") do %>
+18:         <%= render(:partial => "cart", :object => @cart) %>
+19:       <% end %>
+20: 	  </div>
+
+    app/views/layouts/store.html.erb:17
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (109.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2011-01-31 22:21:38) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "orders" [0m
+Rendering template within layouts/store
+Rendering admin/index
+Completed in 59ms (View: 16, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#logout (for 127.0.0.1 at 2011-01-31 22:21:48) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/store
+Rendering admin/logout
+Completed in 53ms (View: 20, DB: 1) | 200 OK [http://localhost/admin/logout]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2011-01-31 22:25:51) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "orders" [0m
+Rendering template within layouts/store
+Rendering admin/index
+Completed in 155ms (View: 25, DB: 0) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#logout (for 127.0.0.1 at 2011-01-31 22:25:56) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/store
+Rendering admin/logout
+Completed in 70ms (View: 26, DB: 1) | 200 OK [http://localhost/admin/logout]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-31 22:26:05) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" [0m
+Rendering template within layouts/store
+Rendering products/index
+Completed in 158ms (View: 103, DB: 2) | 200 OK [http://localhost/products]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-01-31 22:26:07) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" ORDER BY name[0m
+Rendering template within layouts/store
+Rendering users/index
+Completed in 88ms (View: 39, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing OrdersController#index (for 127.0.0.1 at 2011-01-31 22:26:10) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mOrder Load (1.0ms)[0m   [0;1mSELECT * FROM "orders" [0m
+Rendering template within layouts/store
+Rendering orders/index
+Completed in 102ms (View: 42, DB: 4) | 200 OK [http://localhost/orders]
+
+
+Processing AdminController#logout (for 127.0.0.1 at 2011-01-31 22:26:52) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/store
+Rendering admin/logout
+Completed in 47ms (View: 12, DB: 2) | 200 OK [http://localhost/admin/logout]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2011-01-31 22:40:49) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "orders" [0m
+Rendering template within layouts/store
+Rendering admin/index
+Completed in 54ms (View: 9, DB: 2) | 200 OK [http://localhost/admin]
+
+
+Processing OrdersController#index (for 127.0.0.1 at 2011-01-31 22:40:55) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mOrder Load (0.0ms)[0m   [0mSELECT * FROM "orders" [0m
+Rendering template within layouts/store
+Rendering orders/index
+Completed in 110ms (View: 36, DB: 2) | 200 OK [http://localhost/orders]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-01-31 22:40:56) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" [0m
+Rendering template within layouts/store
+Rendering products/index
+Completed in 124ms (View: 52, DB: 2) | 200 OK [http://localhost/products]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-01-31 22:40:57) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" ORDER BY name[0m
+Rendering template within layouts/store
+Rendering users/index
+Completed in 84ms (View: 30, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2011-01-31 22:41:03) [DELETE]
+  Parameters: {"authenticity_token"=>"980sw5LbOkXX0poQpDs6NBtfR8oFVZSb+G5ZjDibe34=", "id"=>"1"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Destroy (1.0ms)[0m   [0;1mDELETE FROM "users" WHERE "id" = 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+Redirected to http://localhost:3000/users
+Completed in 74ms (DB: 3) | 302 Found [http://localhost/users/1]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-01-31 22:41:04) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" ORDER BY name[0m
+Rendering template within layouts/store
+Rendering users/index
+Completed in 90ms (View: 29, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing AdminController#logout (for 127.0.0.1 at 2011-01-31 22:41:18) [GET]
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login
+Completed in 53ms (DB: 4) | 302 Found [http://localhost/admin/logout]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2011-01-31 22:41:18) [GET]
+Rendering template within layouts/store
+Rendering admin/login
+Completed in 43ms (View: 37, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-01-31 22:41:25) [GET]
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (11.0ms)
+Completed in 144ms (View: 101, DB: 2) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2011-01-31 22:41:28) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"980sw5LbOkXX0poQpDs6NBtfR8oFVZSb+G5ZjDibe34=", "id"=>"2"}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 2) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (30.0ms)
+Rendered store/_cart (46.0ms)
+Completed in 130ms (View: 71, DB: 3) | 200 OK [http://localhost/store/add_to_cart/2]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2011-01-31 22:41:29) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"980sw5LbOkXX0poQpDs6NBtfR8oFVZSb+G5ZjDibe34=", "id"=>"2"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 2) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (24.0ms)
+Rendered store/_cart (34.0ms)
+Completed in 102ms (View: 48, DB: 2) | 200 OK [http://localhost/store/add_to_cart/2]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2011-01-31 22:41:30) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"980sw5LbOkXX0poQpDs6NBtfR8oFVZSb+G5ZjDibe34=", "id"=>"2"}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 2) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (26.0ms)
+Rendered store/_cart (34.0ms)
+Completed in 102ms (View: 49, DB: 2) | 200 OK [http://localhost/store/add_to_cart/2]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2011-01-31 22:41:31) [POST]
+  Parameters: {"authenticity_token"=>"980sw5LbOkXX0poQpDs6NBtfR8oFVZSb+G5ZjDibe34="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (27.0ms)
+Rendered store/_cart (38.0ms)
+Completed in 149ms (View: 87, DB: 1) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-01-31 22:41:40) [GET]
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart (6.0ms)
+Completed in 76ms (View: 40, DB: 2) | 200 OK [http://localhost/store/]
+
+
+Processing StoreController#empty_cart (for 127.0.0.1 at 2011-01-31 22:41:46) [POST]
+  Parameters: {"authenticity_token"=>"980sw5LbOkXX0poQpDs6NBtfR8oFVZSb+G5ZjDibe34="}
+Redirected to http://localhost:3000/store
+Completed in 50ms (DB: 1) | 302 Found [http://localhost/store/empty_cart]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-01-31 22:41:46) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (3.0ms)
+Completed in 64ms (View: 35, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2011-01-31 22:41:49) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"980sw5LbOkXX0poQpDs6NBtfR8oFVZSb+G5ZjDibe34=", "id"=>"2"}
+  [4;35;1mProduct Load (2.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 2) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (25.0ms)
+Rendered store/_cart (37.0ms)
+Completed in 112ms (View: 52, DB: 3) | 200 OK [http://localhost/store/add_to_cart/2]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2011-01-31 22:41:50) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"980sw5LbOkXX0poQpDs6NBtfR8oFVZSb+G5ZjDibe34=", "id"=>"4"}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 4) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (8.0ms)
+Rendered store/_cart_item (2.0ms)
+Rendered store/_cart (16.0ms)
+Completed in 68ms (View: 26, DB: 2) | 200 OK [http://localhost/store/add_to_cart/4]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2011-01-31 22:41:52) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"980sw5LbOkXX0poQpDs6NBtfR8oFVZSb+G5ZjDibe34=", "id"=>"3"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 3) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (25.0ms)
+Rendered store/_cart_item (3.0ms)
+Rendered store/_cart_item (2.0ms)
+Rendered store/_cart (47.0ms)
+Completed in 117ms (View: 61, DB: 1) | 200 OK [http://localhost/store/add_to_cart/3]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2011-01-31 22:41:53) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"980sw5LbOkXX0poQpDs6NBtfR8oFVZSb+G5ZjDibe34=", "id"=>"4"}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 4) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (25.0ms)
+Rendered store/_cart_item (2.0ms)
+Rendered store/_cart_item (2.0ms)
+Rendered store/_cart (48.0ms)
+Completed in 122ms (View: 62, DB: 2) | 200 OK [http://localhost/store/add_to_cart/4]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2011-01-31 22:41:54) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"980sw5LbOkXX0poQpDs6NBtfR8oFVZSb+G5ZjDibe34=", "id"=>"2"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 2) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (26.0ms)
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart_item (2.0ms)
+Rendered store/_cart (49.0ms)
+Completed in 121ms (View: 64, DB: 2) | 200 OK [http://localhost/store/add_to_cart/2]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2011-01-31 22:41:55) [POST]
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"980sw5LbOkXX0poQpDs6NBtfR8oFVZSb+G5ZjDibe34=", "id"=>"2"}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 2) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (25.0ms)
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart (45.0ms)
+Completed in 110ms (View: 59, DB: 1) | 200 OK [http://localhost/store/add_to_cart/2]
+
+
+Processing StoreController#empty_cart (for 127.0.0.1 at 2011-01-31 22:41:56) [POST]
+  Parameters: {"authenticity_token"=>"980sw5LbOkXX0poQpDs6NBtfR8oFVZSb+G5ZjDibe34="}
+Redirected to http://localhost:3000/store
+Completed in 50ms (DB: 1) | 302 Found [http://localhost/store/empty_cart]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-01-31 22:41:56) [GET]
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (2.0ms)
+Completed in 65ms (View: 36, DB: 1) | 200 OK [http://localhost/store]
