@@ -4571,3 +4571,11 @@ Rendering template within layouts/store
 Rendering store/index
 Rendered store/_cart (2.0ms)
 Completed in 65ms (View: 36, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing InfoController#who_bought (for 127.0.0.1 at 2011-02-01 16:32:04) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 2) [0m
+Rendering info/who_bought
+  [4;35;1mOrder Load (1.0ms)[0m   [0mSELECT "orders".* FROM "orders" INNER JOIN "line_items" ON "orders".id = "line_items".order_id WHERE (("line_items".product_id = 2)) [0m
+Completed in 217ms (View: 26, DB: 1) | 200 OK [http://localhost/info/who_bought/2]
