@@ -4579,3 +4579,366 @@ Processing InfoController#who_bought (for 127.0.0.1 at 2011-02-01 16:32:04) [GET
 Rendering info/who_bought
   [4;35;1mOrder Load (1.0ms)[0m   [0mSELECT "orders".* FROM "orders" INNER JOIN "line_items" ON "orders".id = "line_items".order_id WHERE (("line_items".product_id = 2)) [0m
 Completed in 217ms (View: 26, DB: 1) | 200 OK [http://localhost/info/who_bought/2]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 20:39:39) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (4.0ms)
+Completed in 172ms (View: 48, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 20:39:45) [GET]
+  Parameters: {"locale"=>"en"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (4.0ms)
+Completed in 87ms (View: 50, DB: 2) | 200 OK [http://localhost/store?locale=en]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 20:44:17) [GET]
+  Parameters: {"locale"=>"en"}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (3.0ms)
+Completed in 64ms (View: 38, DB: 1) | 200 OK [http://localhost/store?locale=en]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 20:44:21) [GET]
+  Parameters: {"locale"=>"en"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (3.0ms)
+Completed in 87ms (View: 50, DB: 2) | 200 OK [http://localhost/store?locale=en]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 20:44:30) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (55.0ms)
+Completed in 113ms (View: 85, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 20:44:33) [GET]
+  Parameters: {"locale"=>"es"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (2.0ms)
+Completed in 52ms (View: 29, DB: 2) | 200 OK [http://localhost/store?locale=es]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 20:44:39) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (2.0ms)
+Completed in 60ms (View: 33, DB: 2) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 20:55:56) [GET]
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+
+ActionView::TemplateError (syntax error on line 4, col 24: `  hello: "Hello world"en:') on line #18 of app/views/layouts/store.html.erb:
+15: 		<%= javascript_tag "$$('.locale input').each(Element.hide)" %>
+16: 	<% end %>
+17:    <%= image_tag("logo.png") %>
+18:     <%= @page_title || I18n.t('layout.title') %>
+19:   </div>
+20:   <div id="columns">
+21:     <div id="side">
+
+    C:/Ruby187/lib/ruby/1.8/yaml.rb:133:in `load'
+    C:/Ruby187/lib/ruby/1.8/yaml.rb:133:in `load'
+    app/views/layouts/store.html.erb:18
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (58.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 20:56:32) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+
+ActionView::TemplateError (syntax error on line 4, col 24: `  hello: "Hello world"en:') on line #18 of app/views/layouts/store.html.erb:
+15: 		<%= javascript_tag "$$('.locale input').each(Element.hide)" %>
+16: 	<% end %>
+17:    <%= image_tag("logo.png") %>
+18:     <%= @page_title || I18n.t('layout.title') %>
+19:   </div>
+20:   <div id="columns">
+21:     <div id="side">
+
+    C:/Ruby187/lib/ruby/1.8/yaml.rb:133:in `load'
+    C:/Ruby187/lib/ruby/1.8/yaml.rb:133:in `load'
+    app/views/layouts/store.html.erb:18
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (116.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 20:57:45) [GET]
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (2.0ms)
+Completed in 51ms (View: 28, DB: 2) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 20:57:50) [GET]
+  Parameters: {"locale"=>"es"}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (3.0ms)
+Completed in 94ms (View: 57, DB: 1) | 200 OK [http://localhost/store?locale=es]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 20:57:57) [GET]
+  Parameters: {"locale"=>"es"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (4.0ms)
+Completed in 95ms (View: 60, DB: 2) | 200 OK [http://localhost/store?locale=es]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 20:59:11) [GET]
+  Parameters: {"locale"=>"es"}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (1.0ms)
+Completed in 55ms (View: 34, DB: 2) | 200 OK [http://localhost/store?locale=es]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 21:01:00) [GET]
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (2.0ms)
+Completed in 48ms (View: 26, DB: 2) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 21:01:03) [GET]
+  Parameters: {"locale"=>"es"}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (4.0ms)
+Completed in 66ms (View: 34, DB: 2) | 200 OK [http://localhost/store?locale=es]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 21:02:40) [GET]
+  Parameters: {"locale"=>"es"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (3.0ms)
+Completed in 60ms (View: 37, DB: 2) | 200 OK [http://localhost/store?locale=es]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 21:02:47) [GET]
+  Parameters: {"locale"=>"en"}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (2.0ms)
+Completed in 65ms (View: 37, DB: 2) | 200 OK [http://localhost/store?locale=en]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 21:02:56) [GET]
+  Parameters: {"locale"=>"en"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (2.0ms)
+Completed in 66ms (View: 37, DB: 2) | 200 OK [http://localhost/store?locale=en]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 21:03:01) [GET]
+  [4;36;1mProduct Load (2.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (2.0ms)
+Completed in 64ms (View: 36, DB: 3) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 21:03:58) [GET]
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (2.0ms)
+Completed in 53ms (View: 31, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 21:04:09) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (3.0ms)
+Completed in 85ms (View: 52, DB: 2) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 21:06:03) [GET]
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (4.0ms)
+Completed in 61ms (View: 34, DB: 2) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 21:06:25) [GET]
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (2.0ms)
+Completed in 74ms (View: 44, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 21:06:29) [GET]
+  Parameters: {"locale"=>"es"}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (3.0ms)
+Completed in 72ms (View: 42, DB: 1) | 200 OK [http://localhost/store?locale=es]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 21:09:22) [GET]
+  Parameters: {"locale"=>"es"}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (4.0ms)
+Completed in 59ms (View: 37, DB: 2) | 200 OK [http://localhost/store?locale=es]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 21:09:28) [GET]
+  Parameters: {"locale"=>"en"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (6.0ms)
+Completed in 116ms (View: 74, DB: 2) | 200 OK [http://localhost/store?locale=en]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 21:10:02) [GET]
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (3.0ms)
+Completed in 55ms (View: 32, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2011-02-01 21:10:08) [POST]
+  Parameters: {"commit"=>"translation missing: en, main, button, sdd", "authenticity_token"=>"980sw5LbOkXX0poQpDs6NBtfR8oFVZSb+G5ZjDibe34=", "id"=>"2"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 2) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (69.0ms)
+Rendered store/_cart (87.0ms)
+Completed in 139ms (View: 101, DB: 2) | 200 OK [http://localhost/store/add_to_cart/2]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 21:10:11) [GET]
+  Parameters: {"locale"=>"es"}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart_item (2.0ms)
+Rendered store/_cart (5.0ms)
+Completed in 65ms (View: 35, DB: 1) | 200 OK [http://localhost/store?locale=es]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 21:11:41) [GET]
+  Parameters: {"locale"=>"es"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart (6.0ms)
+Completed in 68ms (View: 38, DB: 2) | 200 OK [http://localhost/store?locale=es]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 21:11:48) [GET]
+  Parameters: {"locale"=>"en"}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart_item (1.0ms)
+Rendered store/_cart (6.0ms)
+Completed in 75ms (View: 39, DB: 1) | 200 OK [http://localhost/store?locale=en]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 21:16:13) [GET]
+  Parameters: {"locale"=>"es"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart_item (2.0ms)
+Rendered store/_cart (5.0ms)
+Completed in 63ms (View: 34, DB: 2) | 200 OK [http://localhost/store?locale=es]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2011-02-01 21:16:16) [POST]
+  Parameters: {"authenticity_token"=>"980sw5LbOkXX0poQpDs6NBtfR8oFVZSb+G5ZjDibe34="}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (5.0ms)
+Rendered store/_cart (11.0ms)
+Completed in 147ms (View: 99, DB: 1) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#save_order (for 127.0.0.1 at 2011-02-01 21:16:56) [POST]
+  Parameters: {"commit"=>"Realizar Pedido", "authenticity_token"=>"980sw5LbOkXX0poQpDs6NBtfR8oFVZSb+G5ZjDibe34=", "order"=>{"address"=>"", "name"=>"", "pay_type"=>"", "email"=>""}}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (2.0ms)
+Rendered store/_cart (6.0ms)
+Completed in 182ms (View: 39, DB: 1) | 200 OK [http://localhost/store/save_order]
+
+
+Processing StoreController#save_order (for 127.0.0.1 at 2011-02-01 21:18:57) [POST]
+  Parameters: {"commit"=>"Realizar Pedido", "authenticity_token"=>"980sw5LbOkXX0poQpDs6NBtfR8oFVZSb+G5ZjDibe34=", "order"=>{"address"=>"123 MExico", "name"=>"Diego", "pay_type"=>"cc", "email"=>"d@gmail.com"}}
+  [4;36;1mOrder Create (2.0ms)[0m   [0;1mINSERT INTO "orders" ("name", "address", "created_at", "updated_at", "pay_type", "email") VALUES('Diego', '123 MExico', '2011-02-02 04:18:57', '2011-02-02 04:18:57', 'cc', 'd@gmail.com')[0m
+  [4;35;1mLineItem Create (1.0ms)[0m   [0mINSERT INTO "line_items" ("created_at", "product_id", "quantity", "order_id", "total_price", "updated_at") VALUES('2011-02-02 04:18:57', 2, 1, 3, 29.95, '2011-02-02 04:18:57')[0m
+Redirected to http://localhost:3000/store
+Completed in 75ms (DB: 4) | 302 Found [http://localhost/store/save_order]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2011-02-01 21:18:57) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (3.0ms)
+Completed in 53ms (View: 30, DB: 2) | 200 OK [http://localhost/store]
