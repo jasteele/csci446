@@ -8,15 +8,17 @@
 		<li><%= mail_to ("", image_tag("email.png", :border=>0) + "mail", :subject => @article.title, :body => link_to("http://" + request.host_with_port + article_path(@articles))) %></li>
 	</ul>
 </div>
-<h2>
-  <%=h @article.title %>
-</h2>
-
-<p>
-  by <%=h @article.author %>, edited <%=h @article.times_edited %> since <%=h @article.created_at.strftime("%b. %d, %Y.") %>
-</p>
 <br />
-<p>
-  <%= @article.body.gsub(/\n/, '<br />') %>
-</p>
+<div class="content_div">
+	<h2>
+	  <%=h @article.title %>
+	</h2>
 
+	<p>
+	  by <%=h @article.author %>, edited <%=h @article.times_edited %> since <%=h @article.created_at.strftime("%b. %d, %Y.") %>
+	</p>
+	<br />
+	<p>
+	  <%= @article.body.gsub(/\n/, '<br />') %>
+	</p>
+</div>
