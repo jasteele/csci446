@@ -1,8 +1,10 @@
 <h6 class="subtitle">... with a name .com hipsters love! </h6>
 <div id="toolbar">
-	<h1>All the World's Articles</h1>
+	<h2>All the World's Articles</h2>
 	<%= link_to image_tag("add.png", :border=>0) + 'Create an Article', new_article_path, {:title => "Create a new article"} %>
+
 </div>
+<br />
 <div id="articles_list">
 	<table>
 	  <tr>
@@ -26,6 +28,6 @@
 	<% end %>
 	</table>
 </div>
-<p><%=h pluralize(@articles.count, "article") %></p>
 <br />
+<p><%=h pluralize(@articles.count, "article") %></p>
 

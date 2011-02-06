@@ -31,6 +31,10 @@ a:hover { color: #fff; background-color:#000; }
   display: table;
 }
 
+h2 {
+	font-size: 25px;
+	margin-left: .5em;
+}
 #errorExplanation {
   width: 400px;
   border: 2px solid red;
@@ -72,34 +76,32 @@ a:hover { color: #fff; background-color:#000; }
 #header {
 	text-align: center;
 	margin-bottom: 5px;
+	font-size: 30px;
 }
 
-#toolbar h1{
+#toolbar h2{
 	display: inline;
+	margin-right: 150px;
 }
 
 table {
 	border: 1px solid black;
 	width: 900px;
 	max-height: 275px;
-	overflow: scroll;
+	margin-left: .5em;
 }
 
 th {
 	background-color: lightgray;
 	min-height: 25px;
-	max-height: 25px;
 }
 
 tr {
 	min-height: 25px;
-	max-height: 25px;
-	
 }
 
 td {
 	min-height:25px;
-	max-height:25px;
 }
 .list-line-even {
 	background-color: #FFF;
@@ -115,9 +117,19 @@ td {
 
 #articles_list {
 	max-height: 275px;
+	overflow: auto;
+	width: 925px;
 }
 
 label {
+	width: 7em;
+	float: left;
+	text-align: right;
+	margin-right: 1em;
+	display: block
 	
-	/*padding-left: 100px;
+}
+
+#article_submit {
+	margin-left: 8em
 }
