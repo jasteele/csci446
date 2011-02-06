@@ -1,4 +1,6 @@
-<h1>Editing article</h1>
+<h6 class="subtitle"> ... my cousin works for Bit.ly </h6>
+<%= link_to image_tag("arrow_left.png", :border => 0) +'Back' , :back %>
+<h3>Editing "<%=h @article.title %>"</h1>
 
 <% form_for(@article) do |f| %>
   <%= f.error_messages %>
@@ -16,13 +18,8 @@
     <%= f.text_area :body %>
   </p>
   <p>
-    <%= f.label :times_edited %><br />
-    <%= f.text_field :times_edited %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Save Changes' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @article %> |
-<%= link_to 'Back', articles_path %>
+

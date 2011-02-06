@@ -1,26 +1,28 @@
-<h1>Listing articles</h1>
-
+<h6 class="subtitle">... with a name .com hipsters love! </h6>
+<div id="toolbar">
+	<h1>All the World's Articles</h1>
+	<%= link_to image_tag("add.png", :border=>0) + 'Create an Article', new_article_path, {:title => "Create a new article"} %>
+</div>
 <table>
   <tr>
     <th>Title</th>
     <th>Author</th>
     <th>Body</th>
-    <th>Times edited</th>
   </tr>
 
+<div id="articles_list">
 <% @articles.each do |article| %>
-  <tr>
+  <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
     <td><%=h article.title %></td>
     <td><%=h article.author %></td>
     <td><%=h article.body %></td>
-    <td><%=h article.times_edited %></td>
-    <td><%= link_to 'Show', article %></td>
-    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="buttons"><%= link_to image_tag("magnifier.png", :border=>0), article, {:title => "View article"} %></td>
+    <td class="buttons"><%= link_to image_tag("application_edit.png", :border=>0), edit_article_path(article), {:title => "Edit article"} %></td>
+    <td class="buttons"><%= link_to image_tag("bin.png", :border=>0), article, :confirm => 'Are you sure?', :method => :delete, :title => "Delete article" %></td>
   </tr>
 <% end %>
+</div>
 </table>
-
+<%=h pluralize(@articles.count, "article") %>
 <br />
 
-<%= link_to 'New article', new_article_path %>
