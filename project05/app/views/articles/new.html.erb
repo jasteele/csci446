@@ -1,0 +1,25 @@
+<h6 class="subtitle"> ...not just for the country of Spain </h6>
+<div class="content_div">
+	<%= link_to image_tag("arrow_left.png", :border => 0)+ "list all aritcles", articles_path, :title => "Back to the articles list" %>
+	<h2>Creating a New Article</h2>
+	<br />
+	<% form_for(@article) do |f| %>
+	  <%= f.error_messages %>
+
+	  <p>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+	  </p>
+	  <p>
+		<%= f.label :'author name' %>
+		<%= f.text_field :author %>
+	  </p>
+	  <p>
+		<%= f.label :body %>
+		<%= f.text_area :body %>
+	  </p>
+	  <p>
+		<%= f.submit 'Create!' %>
+	  </p>
+	<% end %>
+</div>
