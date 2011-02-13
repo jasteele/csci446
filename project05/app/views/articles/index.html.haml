@@ -1,0 +1,24 @@
+%h6.subtitle ... with a name .com hipsters love!
+.content_div
+  #toolbar
+    %h2 All the World's Articles
+    = link_to image_tag("add.png", :border=>0) + 'Create an Article', new_article_path, {:title => "Create a new article"}
+  %br/
+  #articles_list
+    %table
+      %tr
+        %th Title
+        %th Author
+        %th Body
+        %th Creation Date
+      - @articles.each do |article|
+        %tr{:class => cycle('list-line-odd', 'list-line-even')}
+          %td= h truncate(article.title, :length => 15)
+          %td= h truncate(article.author,:length => 15)
+          %td= h truncate(article.body, :length => 40)
+          %td= h article.created_at.strftime("%A, %b. %d %Y")
+          %td.buttons= link_to image_tag("magnifier.png", :border=>0), article, {:title => "View article"}
+          %td.buttons= link_to image_tag("application_edit.png", :border=>0), edit_article_path(article), {:title => "Edit article"}
+          %td.buttons= link_to image_tag("bin.png", :border=>0), article, :confirm => 'Are you sure?', :method => :delete, :title => "Delete article"
+  %br/
+  %p= h pluralize(@articles.count, "article")

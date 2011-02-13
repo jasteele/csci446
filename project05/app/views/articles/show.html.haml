@@ -1,0 +1,17 @@
+%h6.subtitle ... what's "Articl" in Spainish anyway?
+
+#show_toolbar
+  %ul#show_buttons
+    %li= link_to image_tag("arrow_left.png", :border => 0) + 'list all articles', articles_path
+    %li= link_to image_tag("application_edit.png", :border=>0) + "edit", edit_article_path(@article), {:title => "Edit article"}
+    %li= link_to image_tag("bin.png", :border=>0)+ "delete", @article, :confirm => 'Are you sure?', :method => :delete, :title => "Delete article"
+    %li= mail_to ("", image_tag("email.png", :border=>0) + "mail", :subject => @article.title, :body => article_url(@articles))
+%br/
+.content_div
+  %h2
+    = h @article.title
+  %p
+    by #{h @article.author}, edited #{h @article.times_edited} since #{h @article.created_at.strftime("%b. %d, %Y.")}
+  %br/
+  %p
+    = @article.body.gsub(/\n/, '<br />')

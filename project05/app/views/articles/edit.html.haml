@@ -1,0 +1,19 @@
+%h6.subtitle ... my cousin works for Bit.ly
+.content_div
+  = link_to image_tag("arrow_left.png", :border => 0) +'Back' , :back
+  %h2
+    Editing "#{h @article.title}"
+  %br/
+  - form_for(@article) do |f|
+    = f.error_messages
+    %p
+      = f.label :title
+      = f.text_field :title
+    %p
+      = f.label :'author name'
+      = f.text_field :author
+    %p
+      = f.label :body
+      = f.text_area :body
+    %p
+      = f.submit 'Save Changes'
