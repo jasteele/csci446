@@ -133,7 +133,7 @@ label {
 }
 
 #article_submit {
-	margin-left: 8em
+	margin-left: 8em;
 }
 
 #show_buttons {
@@ -143,11 +143,25 @@ label {
 	padding: 0;
 }
 
-li {
+ul#show_buttons li {
 	float: left;
 	margin-right: 50px;
 }
 
 .content_div{
 	margin-left: 1em;
+}
+
+
+ul.menubar{
+	list-style-type:none;
+	margin:0px 0px 20px 0px;
+	padding: 10px;
+	background-color: #F0F0F0
+}
+
+ul.menubar li {
+	display: inline;
+	margin-right: 100px;
+	padding: 10px;
 }
