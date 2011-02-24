@@ -2,7 +2,10 @@
   <b>Name:</b>
   <%=h @author.name %>
 </p>
-
+<p>
+  <b>Photo:</b>
+  <%= image_tag @author.photo.url %>
+</p>
 
 <%= link_to 'Edit', edit_author_path(@author) %> |
 <%= link_to 'Back', authors_path %>

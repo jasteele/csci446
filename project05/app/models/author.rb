@@ -2,7 +2,8 @@ class Author < ActiveRecord::Base
 	validates_presence_of :name
 	validate :name_is_not_sally
 	has_many :articles
-	
+	has_attached_file :photo,
+					  :url => '/assets/:class/:attachment/:id/:style/:filename'
 	def to_s
 		name
 	end
