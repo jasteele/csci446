@@ -118,8 +118,8 @@ td {
 }
 
 #articles_list {
-	max-height: 300px;
-	overflow: auto;
+	/*max-height: 300px;
+	overflow: auto; */
 	width: 925px;
 }
 

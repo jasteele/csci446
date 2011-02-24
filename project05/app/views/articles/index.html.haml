@@ -5,6 +5,8 @@
     %h2 All the World's Articles
     = link_to image_tag("add.png", :border=>0) + 'Create an Article', new_article_path, {:title => "Create a new article"}
   %br/
+  
+  = will_paginate @articles
   #articles_list
     %table
       %tr
@@ -22,4 +24,4 @@
           %td.buttons= link_to image_tag("application_edit.png", :border=>0), edit_article_path(article), {:title => "Edit article"}
           %td.buttons= link_to image_tag("bin.png", :border=>0), article, :confirm => 'Are you sure?', :method => :delete, :title => "Delete article"
   %br/
-  %p= h pluralize(@articles.count, "article")
+  %p= h pluralize(@num_articles, "article")

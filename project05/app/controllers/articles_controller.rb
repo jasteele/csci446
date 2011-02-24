@@ -3,8 +3,9 @@ class ArticlesController < ApplicationController
   # GET /articles.xml
   before_filter :load_authors, :only => [:new, :edit]
   def index
-    @articles = Article.all(:include => :author)
-
+    #@articles = Article.all(:include => :author)
+	@num_articles = Article.count
+	@articles = Article.paginate(:page => params[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @articles }
