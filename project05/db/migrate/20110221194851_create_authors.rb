@@ -11,9 +11,9 @@ class CreateAuthors < ActiveRecord::Migration
 	#grab all the author atrributes from each articles
 	#create a new author with that name
 	#associate each article with their new author instance
-	Articles.all.each do |article|
+	Article.all.each do |article|
 		author = Author.create(:name => article.author_name)
-		articles.author = author
+		article.author = author
 		article.save
 	end
 
