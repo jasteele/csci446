@@ -5,3 +5,8 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
+User.delete_all
+Role.delete_all
+admin = Role.create(:name => "admin")
+member = Role.create(:name => "member")
+
