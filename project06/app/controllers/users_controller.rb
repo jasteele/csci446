@@ -38,10 +38,11 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 	#default role to member
 	@user.role = Role.find_by_name("member")
-    if @user.save
+    if verify_recaptcha && @user.save
        flash[:notice] ="Registration Successful."
 	   redirect_to root_url
     else
+	   flash[:error] = "Recaptcha Failed"
 	   render :action => 'new'
     end
   end
