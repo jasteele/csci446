@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  filter_access_to :all
   # GET /users
   # GET /users.xml
   def index
@@ -39,10 +40,9 @@ class UsersController < ApplicationController
 	#default role to member
 	@user.role = Role.find_by_name("member")
     if verify_recaptcha && @user.save
-       flash[:notice] ="Registration Successful."
+       flash[:notice] ="Welcome, #{@user.first_last}."
 	   redirect_to root_url
     else
-	   flash[:error] = "Recaptcha Failed"
 	   render :action => 'new'
     end
   end

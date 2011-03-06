@@ -4,5 +4,6 @@ class AddUsersToGames < ActiveRecord::Migration
   end
 
   def self.down
+	remove_column :games, :user_id
   end
 end

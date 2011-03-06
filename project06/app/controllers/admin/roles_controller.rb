@@ -1,4 +1,5 @@
-class RolesController < ApplicationController
+class Admin::RolesController < Admin::AdminController
+  filter_access_to :all
   # GET /roles
   # GET /roles.xml
   def index

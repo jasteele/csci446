@@ -1,20 +1,19 @@
 <h1>Listing games</h1>
-
+<%= will_paginate @games %>
 <table>
   <tr>
     <th>Title</th>
-    <th>User</th>
     <th>Rating</th>
+	<th>User</th>
+	<th>Created At</th>
   </tr>
 
 <% @games.each do |game| %>
   <tr>
     <td><%=h game.title %></td>
-    <td><%=h game.user.username %></td>
     <td><%=h game.rating %></td>
-    <td><%= link_to 'Show', game %></td>
-    <td><%= link_to 'Edit', edit_game_path(game) %></td>
-    <td><%= link_to 'Destroy', game, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%=h game.user.first_last %></td>
+	<td><%=h game.created_at %></td>
   </tr>
 <% end %>
 </table>

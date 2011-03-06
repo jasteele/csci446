@@ -1,0 +1,20 @@
+<h2> My Gamez </h2>
+<%= will_paginate @games %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>User</th>
+    <th>Rating</th>
+  </tr>
+
+<% @games.each do |game| %>
+  
+  <tr>
+    <td><%= link_to game.title, edit_game_path(game) %></td>
+    <td><%=h game.user.username %></td>
+    <td><%=h game.rating %></td>
+    
+  
+  </tr>
+<% end %>
+</table>

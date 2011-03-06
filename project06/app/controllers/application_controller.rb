@@ -4,8 +4,10 @@
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
+ 
   filter_parameter_logging :password
-  helper_method :current_user_session, :current_user
+  helper_method :current_user_session
+  helper_method :current_user
   
   
   private
@@ -24,7 +26,7 @@ class ApplicationController < ActionController::Base
   
   def require_user
 	unless current_user
-	  flash[:notice] = "You must log in if you want to access that."
+	  flash[:error] = "You must log in if you want to access that."
 	  redirect_to root_url
 	  return false
 	end
@@ -32,7 +34,7 @@ class ApplicationController < ActionController::Base
   
   def require_no_user
 	if current_user
-	  flash[:notice] = "You must be logged out to access #{request.path}."
+	  flash[:error] = "You must be logged out to access #{request.path}."
 	  redirect_to root_url
 	  return false
 	end

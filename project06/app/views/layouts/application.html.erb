@@ -11,9 +11,9 @@
 	<div id="user_nav">
 		<% if current_user %>
 			<%=h "Logged in as " %> 
-			<%= link_to current_user.username, edit_user_path(:current) %>  
-			<%=h ", " + current_user.role.name %> .
-			<%= link_to "Edit Profile", edit_user_path(:current) %> |
+			<%= link_to current_user.first_last, edit_user_path(:current) %>  
+			<%=h ", #{current_user.role.name}." %> 
+			<%= link_to "My Games", member_root_url %>
 			<%= link_to "Logout", logout_path %>
 		<% else %>
 			<%= link_to "Register", new_user_path %> |

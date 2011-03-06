@@ -1,8 +1,7 @@
 class GamesController < ApplicationController
-  # GET /games
-  # GET /games.xml
+  filter_access_to :all
   def index
-    @games = Game.all
+    @games = Game.paginate(:page => params[:page], :order => 'created_at DESC')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,7 +43,7 @@ class GamesController < ApplicationController
 	@game.user = current_user
     respond_to do |format|
       if @game.save
-        format.html { redirect_to(@game, :notice => 'Game was successfully created.') }
+        format.html { redirect_to(root_url, :notice => 'Game was successfully created.') }
         format.xml  { render :xml => @game, :status => :created, :location => @game }
       else
         format.html { render :action => "new" }
