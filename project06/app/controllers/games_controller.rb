@@ -41,8 +41,7 @@ class GamesController < ApplicationController
   # POST /games.xml
   def create
     @game = Game.new(params[:game])
-	#thought i could use the helper method i already made but it does not seem to work
-	@game.user = curent_user
+	@game.user = current_user
     respond_to do |format|
       if @game.save
         format.html { redirect_to(@game, :notice => 'Game was successfully created.') }
