@@ -36,6 +36,7 @@ class UsersController < ApplicationController
   # POST /users.xml
   def create
     @user = User.new(params[:user])
+	#default role to member
 	@user.role = Role.find_by_name("member")
     if @user.save
        flash[:notice] ="Registration Successful."

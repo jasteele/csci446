@@ -20,6 +20,14 @@
     <%= f.password_field :password_confirmation %>
   </p>
   <p>
+    <%= f.label "First Name" %><br />
+    <%= f.text_field :fname %>
+  </p>
+  <p>
+    <%= f.label "Last Name" %><br />
+    <%= f.text_field :lname %>
+  </p>
+  <p>
     <%= f.submit 'Create' %>
   </p>
 <% end %>
