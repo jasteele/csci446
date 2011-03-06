@@ -10,7 +10,7 @@
 <% @games.each do |game| %>
   <tr>
     <td><%=h game.title %></td>
-    <td><%=h game.user.to_s %></td>
+    <td><%=h game.user.username %></td>
     <td><%=h game.rating %></td>
     <td><%= link_to 'Show', game %></td>
     <td><%= link_to 'Edit', edit_game_path(game) %></td>

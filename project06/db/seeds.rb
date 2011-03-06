@@ -10,5 +10,5 @@ Role.delete_all
 Game.delete_all
 admin = Role.create(:name => "admin")
 member = Role.create(:name => "member")
-user = User.create(:username => "john", :password => "12345", :email => "a@a.com")
+user = User.create(:username => "administrator", :password => "password", :password_confirmation => "password", :email => "a@a.com")
 Game.create(:title => "test", :rating => "lame", :user_id => user)
