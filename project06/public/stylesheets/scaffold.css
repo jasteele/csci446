@@ -56,3 +56,11 @@ a:hover { color: #fff; background-color:#000; }
 	float: right;
 	font-size: 12px;
 }
+
+.flasherror{
+	color: red;
+}
+
+.flashnotice{
+	color: green;
+}

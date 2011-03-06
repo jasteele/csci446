@@ -21,8 +21,7 @@
 		<% end %>
 	</div>
 <h1 id="title"> <%= link_to "Gamez", root_url %> </h1>
-<p style="color: green"><%= notice %></p>
-
+<%= flash_div :error, :notice %>
 <%= yield %>
 
 </body>
