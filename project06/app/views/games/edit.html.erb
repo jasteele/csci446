@@ -15,7 +15,12 @@
 	<%= f.radio_button :rating, 'meh' %> Meh<br />
 	<%= f.radio_button :rating, 'terrible' %> Terrible<br />
   </p>
-  <p>
+  <% if current_user.role.name == "admin" %>
+	  <p>
+		<%= f.label "Creator" %>
+		<%= f.collection_select(:user_id, Admin::UsersController.get_users, :id, :first_last) %>
+	  <p>
+  <% end %>
     <%= f.submit 'Update' %>
   </p>
 <% end %>

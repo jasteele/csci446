@@ -15,16 +15,16 @@
 			<%=h ", #{current_user.role.name}." %> 
 			<% if  current_user.role.name == "admin" %>
 				<%= link_to "Admin", admin_root_url %>
-			<%else%>
-				<%= link_to "My Games", member_root_url %>
 			<%end%>
+				
+			<%= link_to "My Games", member_root_url %>
 			<%= link_to "Logout", logout_path %>
 		<% else %>
 			<%= link_to "Register", new_admin_user_path %> |
 			<%= link_to "Login", login_path %>
 		<% end %>
 	</div>
-<h1 id="title"> <%= link_to "Gamez", root_url %>  
+<h1 id="title"> <%= link_to "Gamez admin layout", root_url %>  
 	<% if current_user && current_user.role.name == "admin" %>
 		Admin
 	<%end%>

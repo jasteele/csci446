@@ -1,9 +1,12 @@
 class Admin::UsersController < Admin::AdminController
+  before_filter :magic_user, :only => [:show, :edit, :update, :destroy]
   filter_access_to :all
+  filter_access_to :edit, :attribute_check => true
+ 
   # GET /users
   # GET /users.xml
   def index
-    @users = User.all
+    @users = User.paginate(:page => params[:page], :order => 'lname ASC')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +17,6 @@ class Admin::UsersController < Admin::AdminController
   # GET /users/1
   # GET /users/1.xml
   def show
-    @user = User.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -30,7 +32,7 @@ class Admin::UsersController < Admin::AdminController
 
   # GET /users/1/edit
   def edit
-    @user = current_user
+    
   end
 
   # POST /users
@@ -50,8 +52,6 @@ class Admin::UsersController < Admin::AdminController
   # PUT /users/1
   # PUT /users/1.xml
   def update
-    @user = current_user
-
       if @user.update_attributes(params[:user])
        flash[:notice] = 'Profile updated.' 
 	   redirect_to home_url
@@ -63,12 +63,24 @@ class Admin::UsersController < Admin::AdminController
   # DELETE /users/1
   # DELETE /users/1.xml
   def destroy
-    @user = User.find(params[:id])
     @user.destroy
 
     respond_to do |format|
       format.html { redirect_to(users_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  private
+  def magic_user
+    if defined?(params[:id]) and params[:id] != "current"
+      @user = User.find(params[:id])
+    else
+      @user = current_user
+    end
+  end
+  
+  def self.get_users
+    return User.find(:all)
   end
 end

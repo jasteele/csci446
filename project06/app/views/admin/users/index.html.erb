@@ -1,5 +1,5 @@
 <h2>Users</h2>
-
+<% will_paginate @users %>
 <table>
   <tr>
 	<th>Name</th>
@@ -10,9 +10,9 @@
 
 <% @users.each do |user| %>
   <tr>
-	<td><%=h user.first_last %></td>
+	<td><%= link_to user.first_last, edit_admin_user_path(user) %></td>
     <td><%=h user.username %></td>
-    <td><%=h user.last_login_at.strftime("%s") %></td>
+    <td><%=h time_ago_in_words(user.last_login_at) %></td> 
     <td><%=h user.games.count%></td>
   </tr>
 <% end %>

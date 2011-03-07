@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   has_many :games #, :counter_cache => true
   belongs_to :role
   
+  cattr_reader :per_page
+  @@per_page = 10
   
   acts_as_authentic
   
@@ -21,4 +23,5 @@ class User < ActiveRecord::Base
 	"#{fname} #{lname}"
   end
   
+
 end

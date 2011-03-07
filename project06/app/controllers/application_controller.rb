@@ -23,23 +23,7 @@ class ApplicationController < ActionController::Base
 	@current_user = current_user_session && current_user_session.user
 	#return @current_user
  end
-  
-  def require_user
-	unless current_user
-	  flash[:error] = "You must log in if you want to access that."
-	  redirect_to root_url
-	  return false
-	end
-  end
-  
-  def require_no_user
-	if current_user
-	  flash[:error] = "You must be logged out to access #{request.path}."
-	  redirect_to root_url
-	  return false
-	end
-  end  
-  
+
   def home_url
 	if current_user.role == "admin"
 		return admin_root_url

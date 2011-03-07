@@ -1,4 +1,4 @@
-<h1>Listing games</h1>
+
 <%= will_paginate @games %>
 <table>
   <tr>
@@ -11,11 +11,13 @@
   <tr>
     <td><%=h game.title %></td>
     <td><%=h game.rating %></td>
+	<% if current_user && current_user == game.user %>
+	<td><%=h "#{game.created_at.strftime("%b. %d %Y")} by me" %></td>
+	<% else %>
 	<td><%=h "#{game.created_at.strftime("%b. %d %Y")} by #{game.user.first_last}" %></td>
-  </tr>
+	<%end%>
+ </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New game', new_game_path %>

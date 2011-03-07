@@ -10,13 +10,13 @@
 
 <% @games.each do |game| %>
   <tr>
-    <td><%=h game.title %></td>
+    <td><%= link_to game.title, edit_game_path(game) %></td>
     <td><%=h game.rating %></td>
 	<% if current_user == game.user %>
 		<td><%=h "#{game.created_at.strftime("%b. %d %Y")} by me" %></td>
     <% else %>
 		<td><%=h "#{game.created_at.strftime("%b. %d %Y")} by " %>
-		<%= link_to game.user.first_last, edit_game_path(game) %>
+		<%= link_to game.user.first_last, edit_admin_user_path(game.user) %>
 		</td>
 	<% end %>
 
