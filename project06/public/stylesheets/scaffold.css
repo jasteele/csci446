@@ -53,22 +53,22 @@ a:hover { color: #fff; background-color:#000; }
 }
 
 #user_nav {
-	float: right;
-	font-size: 12px;
+  float: right;
+  font-size: 12px;
 }
 
 .flasherror{
-	color: red;
+  color: red;
 }
 
 .flashnotice{
-	color: green;
+  color: green;
 }
 
 #user_image{
-	float: right;
+  float: right;
 }
 
 #game_count{
-	display: inline;
+  display: inline;
 }
