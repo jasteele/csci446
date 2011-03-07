@@ -9,8 +9,11 @@
   </p>
 
   <p>
-    <%= f.label :rating %><br />
-    <%= f.text_field :rating %>
+	Rating <br />
+    <%= f.radio_button :rating, 'excellent' %> Excellent<br />
+	<%= f.radio_button :rating, 'good' %> Good<br />
+	<%= f.radio_button :rating, 'meh' %> Meh<br />
+	<%= f.radio_button :rating, 'terrible' %> Terrible<br />
   </p>
   <p>
     <%= f.submit 'Create' %>

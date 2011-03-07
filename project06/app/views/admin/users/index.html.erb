@@ -1,0 +1,19 @@
+<h2>Users</h2>
+
+<table>
+  <tr>
+	<th>Name</th>
+    <th>Username</th>
+    <th>Last Login</th>
+    <th>Number of Games</th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+	<td><%=h user.first_last %></td>
+    <td><%=h user.username %></td>
+    <td><%=h user.last_login_at.strftime("%s") %></td>
+    <td><%=h user.games.count%></td>
+  </tr>
+<% end %>
+</table>

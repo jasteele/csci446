@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Admin::UsersController < Admin::AdminController
   filter_access_to :all
   # GET /users
   # GET /users.xml
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
 	@user.role = Role.find_by_name("member")
     if verify_recaptcha && @user.save
        flash[:notice] ="Welcome, #{@user.first_last}."
-	   redirect_to root_url
+	   redirect_to home_url
     else
 	   render :action => 'new'
     end
@@ -54,7 +54,7 @@ class UsersController < ApplicationController
 
       if @user.update_attributes(params[:user])
        flash[:notice] = 'Profile updated.' 
-	   redirect_to root_url
+	   redirect_to home_url
       else
        render :action => "edit"
       end

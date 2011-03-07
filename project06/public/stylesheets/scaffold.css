@@ -68,3 +68,7 @@ a:hover { color: #fff; background-color:#000; }
 #user_image{
 	float: right;
 }
+
+#game_count{
+	display: inline;
+}

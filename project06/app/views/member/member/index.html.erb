@@ -3,17 +3,16 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>User</th>
     <th>Rating</th>
+	<th>Date Added</th>
   </tr>
 
 <% @games.each do |game| %>
   
   <tr>
     <td><%= link_to game.title, edit_game_path(game) %></td>
-    <td><%=h game.user.username %></td>
     <td><%=h game.rating %></td>
-    
+    <td><%= "#{game.created_at.strftime("%b. %d %Y")} by me" %></td>
   
   </tr>
 <% end %>

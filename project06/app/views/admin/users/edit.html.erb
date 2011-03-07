@@ -1,11 +1,16 @@
 <h1>Edit User Profile</h1>
 
-<% form_for(@user, :html => {:multipart => true}) do |f| %>
+<% form_for([:admin, @user], :html => {:multipart => true}) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
+	<%= f.label :username%><br />
+	<% if current_user.role.name == "admin" %>
+		<%= f.text_field :username %>
+	<%else%>
+		<%= f.text_field :username, :disabled => true %>
+	<%end%>
+    
   </p>
   <p>
     <%= f.label :email %><br />
@@ -33,6 +38,11 @@
   <p>
     <%= f.label :photo %><br />
     <%= f.file_field :photo %>
+  </p>
+  <p>
+	<% if current_user.role.name == "admin" %>
+		<%= f.collection_select(:role_id, Admin::RolesController.get_roles, :id, :name)%>
+	<%end%>
   </p>
   <p>
     <%= f.submit 'Update' %>

@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password
   helper_method :current_user_session
   helper_method :current_user
-  
+  helper_method :find_root
   
   private
   
@@ -40,4 +40,12 @@ class ApplicationController < ActionController::Base
 	end
   end  
   
+  def home_url
+	if current_user.role == "admin"
+		return admin_root_url
+	else
+		return member_root_url
+	end
+  end
+
 end

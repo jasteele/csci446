@@ -1,8 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   
   map.resources :games
-  #map.resources :roles
-  map.resources :users
   map.resources :user_sessions
   
   map.root :controller => "games"
@@ -11,6 +9,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.namespace :admin do |admin|
 	admin.resources :roles
+	admin.resources :users
 	admin.root :controller => 'admin', :action => 'index'
   end
   

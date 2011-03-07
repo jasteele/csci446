@@ -1,7 +1,7 @@
 <h1>Editing game</h1>
 
 <% form_for(@game) do |f| %>
-  <%= f.error_messages %>
+  <%= f.error_messages( :header_message => "Could not save changes") %>
 
   <p>
     <%= f.label :title %><br />
@@ -9,8 +9,11 @@
   </p>
 
   <p>
-    <%= f.label :rating %><br />
-    <%= f.text_field :rating %>
+	Rating <br />
+    <%= f.radio_button :rating, 'excellent' %> Excellent<br />
+	<%= f.radio_button :rating, 'good' %> Good<br />
+	<%= f.radio_button :rating, 'meh' %> Meh<br />
+	<%= f.radio_button :rating, 'terrible' %> Terrible<br />
   </p>
   <p>
     <%= f.submit 'Update' %>

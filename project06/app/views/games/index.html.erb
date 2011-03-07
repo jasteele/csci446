@@ -4,7 +4,6 @@
   <tr>
     <th>Title</th>
     <th>Rating</th>
-	<th>User</th>
 	<th>Created At</th>
   </tr>
 
@@ -12,8 +11,7 @@
   <tr>
     <td><%=h game.title %></td>
     <td><%=h game.rating %></td>
-    <td><%=h game.user.first_last %></td>
-	<td><%=h game.created_at %></td>
+	<td><%=h "#{game.created_at.strftime("%b. %d %Y")} by #{game.user.first_last}" %></td>
   </tr>
 <% end %>
 </table>
