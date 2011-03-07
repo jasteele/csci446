@@ -1,0 +1,28 @@
+%h1 Editing game
+- form_for(@game) do |f|
+  = f.error_messages( :header_message => "Could not save changes")
+  %p
+    = f.label :title
+    %br/
+    = f.text_field :title
+  %p
+    Rating
+    %br/
+    = f.radio_button :rating, 'excellent'
+    Excellent
+    %br/
+    = f.radio_button :rating, 'good'
+    Good
+    %br/
+    = f.radio_button :rating, 'meh'
+    Meh
+    %br/
+    = f.radio_button :rating, 'terrible'
+    Terrible
+    %br/
+  - if current_user.role.name == "admin"
+    %p
+      = f.label "Creator"
+      = f.collection_select(:user_id, Admin::UsersController.get_users, :id, :first_last)
+      %p
+  = f.submit 'Update'

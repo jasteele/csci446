@@ -1,0 +1,14 @@
+= will_paginate @games
+%table
+  %tr
+    %th Title
+    %th Rating
+    %th Created At
+  - @games.each do |game|
+    %tr
+      %td= h game.title
+      %td= h game.rating
+      - if current_user && current_user == game.user
+        %td= h "#{game.created_at.strftime("%b. %d %Y")} by me"
+      - else
+        %td= h "#{game.created_at.strftime("%b. %d %Y")} by #{game.user.first_last}"

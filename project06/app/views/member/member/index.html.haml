@@ -1,0 +1,14 @@
+%h2 My Gamez
+= will_paginate @games
+%table
+  %tr
+    %th Title
+    %th Rating
+    %th Date Added
+  - @games.each do |game|
+    %tr
+      %td= link_to game.title, edit_game_path(game)
+      %td= h game.rating
+      %td= "#{game.created_at.strftime("%b. %d %Y")} by me"
+%p
+  = "I've created #{pluralize (num_games(current_user), 'game')}, #{((rated_games(current_user).to_f / num_games(current_user)) * 100)}% of which are rated"

@@ -1,8 +1,9 @@
 class GamesController < ApplicationController
   filter_access_to :all
+  
   def index
     @games = Game.paginate(:page => params[:page], :order => 'created_at DESC')
-
+	
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @games }
@@ -79,4 +80,6 @@ class GamesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+	
 end

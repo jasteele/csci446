@@ -1,0 +1,34 @@
+%h1 New user
+- form_for([:admin, @user], :html => {:multipart => true}) do |f|
+  = f.error_messages
+  %p
+    = f.label :username
+    %br/
+    = f.text_field :username
+  %p
+    = f.label :email
+    %br/
+    = f.text_field :email
+  %p
+    = f.label :password
+    %br/
+    = f.password_field :password
+  %p
+    = f.label :password_confirmation
+    %br/
+    = f.password_field :password_confirmation
+  %p
+    = f.label "First Name"
+    %br/
+    = f.text_field :fname
+  %p
+    = f.label "Last Name"
+    %br/
+    = f.text_field :lname
+  %p
+    = f.label :photo
+    %br/
+    = f.file_field :photo
+  = recaptcha_tags
+  %p
+    = f.submit 'Create'

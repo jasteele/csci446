@@ -43,7 +43,7 @@ class Admin::UsersController < Admin::AdminController
 	@user.role = Role.find_by_name("member")
     if verify_recaptcha && @user.save
        flash[:notice] ="Welcome, #{@user.first_last}."
-	   redirect_to home_url
+	   redirect_to root_url
     else
 	   render :action => 'new'
     end

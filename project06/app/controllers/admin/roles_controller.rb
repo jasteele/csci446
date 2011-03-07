@@ -1,10 +1,11 @@
 class Admin::RolesController < Admin::AdminController
   filter_access_to :all
-  # GET /roles
+  helper_method :num_users
+ # GET /roles
   # GET /roles.xml
   def index
 	
-	@roles = [Role.find(:all) , User.find(:all, :group => "role_id").count]
+	@roles = Role.find(:all)
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @roles }
@@ -84,5 +85,9 @@ class Admin::RolesController < Admin::AdminController
   
   def self.get_roles
 	return Role.find(:all)
+  end
+  
+  def num_users(role)
+     return User.count(:conditions => ["role_id = ?", role.id])    
   end
 end

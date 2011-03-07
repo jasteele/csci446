@@ -1,0 +1,41 @@
+%h1 Edit User Profile
+- form_for([:admin, @user], :html => {:multipart => true}) do |f|
+  = f.error_messages
+  %p
+    = f.label :username
+    %br/
+    - if current_user.role.name == "admin"
+      = f.text_field :username
+    - else
+      = f.text_field :username, :disabled => true
+  %p
+    = f.label :email
+    %br/
+    = f.text_field :email
+  %p
+    = f.label :password
+    %br/
+    = f.password_field :password
+  %p
+    = f.label :password_confirmation
+    %br/
+    = f.password_field :password_confirmation
+  %p
+    = f.label "First Name"
+    %br/
+    = f.text_field :fname
+  %p
+    = f.label "Last Name"
+    %br/
+    = f.text_field :lname
+  - if @user.photo?
+    = image_tag @user.photo.url, :id => "user_image"
+  %p
+    = f.label :photo
+    %br/
+    = f.file_field :photo
+  %p
+    - if current_user.role.name == "admin"
+      = f.collection_select(:role_id, Admin::RolesController.get_roles, :id, :name)
+  %p
+    = f.submit 'Update'

@@ -1,0 +1,19 @@
+%h2#game_count
+  = pluralize Game.count, 'Total Game'
+= link_to "Add a game", new_game_url
+= will_paginate @games
+%table
+  %tr
+    %th Title
+    %th Rating
+    %th Date Added
+  - @games.each do |game|
+    %tr
+      %td= link_to game.title, edit_game_path(game)
+      %td= h game.rating
+      - if current_user == game.user
+        %td= h "#{game.created_at.strftime("%b. %d %Y")} by me"
+      - else
+        %td
+          = h "#{game.created_at.strftime("%b. %d %Y")} by "
+          = link_to game.user.first_last, edit_admin_user_path(game.user)

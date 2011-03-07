@@ -1,0 +1,24 @@
+%h1 New game
+- form_for(@game) do |f|
+  = f.error_messages
+  %p
+    = f.label :title
+    %br/
+    = f.text_field :title
+  %p
+    Rating
+    %br/
+    = f.radio_button :rating, 'excellent'
+    Excellent
+    %br/
+    = f.radio_button :rating, 'good'
+    Good
+    %br/
+    = f.radio_button :rating, 'meh'
+    Meh
+    %br/
+    = f.radio_button :rating, 'terrible'
+    Terrible
+    %br/
+  %p
+    = f.submit 'Create'
